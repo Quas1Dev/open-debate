@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "/type-theme"
-url: "https://rohanchandra.github.io/"
+url: "https://fb16455.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -83,3 +83,4 @@ plugins: [jekyll-paginate]
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor/bundle
