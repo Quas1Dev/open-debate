@@ -13,6 +13,10 @@
 			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
 		</h1>
 	</div>
-	{% include nav-bar.html %}
+	{% if page.url == "/index.html" %} 
+      {% include nav-bar.html %} 
+	{% else %} 
+		{% include nav-debates.html %} 
+	{% endif %}
 
 </header>
