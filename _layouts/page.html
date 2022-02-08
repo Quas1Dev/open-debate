@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<!-- Set of style for each different components
+a page may have -->
+{% include bio_style.html %} 
+{% include guest_style.html %} 
+{% include mod_style.html %} 
+{% include speaker_style.html %} 
+{% include results_style.html %}
+
 <article {% if page.feature-img %}class="feature-image"{% endif %}>
   <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
     <h1 class="title">{{ page.feature-title | default: page.title }}</h1>
