@@ -15,7 +15,7 @@ theme_settings:
   header_text: >
      <p>Oxford style debates on issues that matter.</p>
      <p>Current debate topic: Cloud Computing.</p>
-  header_text_feature_image: ../assets/img/debate.png # Cover image for the header
+  header_text_feature_image: ../assets/img/banner.jpg # Cover image for the header
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
@@ -85,12 +85,13 @@ exclude:
   - vendor/bundle
 
 collections: 
-  first: 
+  assuntopolemico: 
     output: true # Must process all files inside the collection
-    permalink: /first/:path/ # Set the url for the pages.
+    permalink: /assuntopolemico/:path/ # Set the url for the pages.
     thumbnail: /thumbnails/first.png # Set the url for the image
+    readable: "Assunto Polênico"
 
-current: first
+current: assuntopolemico
 
 curr_description: >
   Lorem ipsum dolor sit, amet consectetur adipisicing, elit. A obcaecati recusandae saepe unde sunt nulla perferendis, iure assumenda similique harum asperiores, vel, quae quod nihil accusantium dignissimos. Accusamus, nemo in.
