@@ -11,41 +11,52 @@ layout: default
         list-style-type: none;
     }
 </style>
+
 <div class="home">
     <!-- Jambotron -->
     {% if site.theme_settings.header_text %}
-    <div class="call-out" style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}');">
+    <div class="call-out"
+        style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}');">
         {{ site.theme_settings.header_text }}
     </div>
     {% endif %}
     <!-- End Jambotron -->
     <br>
-    <Strong>
-        <p>Our debates:</p>
-    </Strong>
-    
-    <section class="test">
-        <!-- <h2>Current Debate</h2> -->
-        <p>The debate in session currently is - <a class="page-link" href="{{site.baseurl}}/{{ site.current }}/briefing">{{ site.current }}</a></p>
-        <small>
-            <strong>{{site.curr_description}}</strong>
-        </small>
-        <br>
+    <section>
+        <h1>Debates</h1>
+
+        <section class="test">
+            <h2>Current Debate</h2>
+            {% for collection in site.collections limit: 1 %}
+            <p>The debate in session currently is - <a class="page-link"
+                    href="{{site.baseurl}}/{{ collection.label }}/briefing">
+                    {{ collection.readable }}
+                </a>
+            </p>
+            {% endfor %}
+            <small>
+                <strong>{{site.curr_description}}</strong>
+            </small>
+            <br>
+
+        </section>
         <!-- List a thumbnail and hyperlink the label of the collection to the briefing page for that debate -->
+        {% if site.collections%}
         <section>
-            <!-- <h2>Past Debates</h2> -->
+            <h2>Past Debates</h2>
             <ul>
                 {% for collection in site.collections %}
-                  {% unless collection.label == 'posts' %}             
-                  <li> 
+                {% unless collection.label == 'posts' %}
+                <li>
                     <img align="center" src="{{ collection.thumbnail }}"></img>
                     <p>{{ collection.label }}:
-                      <a href="{{ site.baseurl}}/{{ collection.label}}/briefing/"> Briefing </a>
+                        <a href="{{ site.baseurl}}/{{ collection.label}}/briefing/"> Briefing </a>
                     </p>
-                  </li>
-                  {% endunless %}
+                </li>
+                {% endunless %}
                 {% endfor %}
             </ul>
         </section>
+        {% endif %}
     </section>
 </div>
